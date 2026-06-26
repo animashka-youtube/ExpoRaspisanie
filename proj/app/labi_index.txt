@@ -1,0 +1,213 @@
+// ЛАБА 3___________________________________________________________________________________________________________________________________________
+// import { Text, View, StyleSheet, Image, Alert, Button } from "react-native";
+
+// export default function Index() {
+//   const handleButton = () =>
+//     Alert.alert("Title", "Description", [
+//       { text: "да", onPress: () => console.log("Yes") },
+//       { text: "Отмена", onPress: () => console.log("No") },
+//     ]);
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.text}>Начинается 3 лаба?</Text>
+//       <Button title={"Начать"} onPress={handleButton} />
+//       <Image
+//         source={require("../assets/images/animashka2.png")}
+//         style={{ width: 100, height: 100 }}
+//       />
+//     </View>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: "center",
+//     alignItems: "center",
+//   },
+//   text: {
+//     color: "purple",
+//     marginBottom: 16,
+//   },
+// });
+// ЛАБА 4___________________________________________________________________________________________________________________________________________
+
+// import { Text, View, Image, StyleSheet, Alert, Button } from "react-native";
+
+// export default function Index() {
+//   const handleButton = () =>
+//     Alert.alert("Title", "Description", [
+//       { text: "Да", onPress: () => console.log("Yes") },
+//       { text: "Отмена", onPress: () => console.log("No") },
+//     ]);
+
+//   return (
+//     <View style={styles.container}>
+//       <Image
+//         source={require("../assets/images/animashka2.png")}
+//         style={{ width: 100, height: 100, margin: 100 }}
+//       />
+//       <Text style={styles.text}>Лаба 3</Text>
+//       <Button title={"Начать"} onPress={handleButton} />
+
+//       <View style={styles.box}>
+//         <text style={simpleStyle}>4 Лаба</text>
+//       </View>
+//     </View>
+//   );
+// }
+
+// const simpleStyle = { color: "white" };
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: "center",
+//     alignItems: "center",
+//   },
+//   text: {
+//     color: "purple",
+//   },
+//   box: {
+//     backgroundColor: "purple",
+//     width: "70%",
+//     height: 150,
+//     borderRadius: 10,
+//     padding: 10,
+//     margin: 20,
+//   },
+// });
+
+// ЛАБА 5___________________________________________________________________________________________________________________________________________
+
+// import { View, StyleSheet } from "react-native";
+
+// export default function App() {
+//   return (
+//     <View style={styles.mainBlock}>
+//       <View
+//         style={[styles.box, { backgroundColor: "white", height: 400 }]}
+//       ></View>
+//       <View style={[styles.box, { backgroundColor: "purple" }]}></View>
+//       <View style={[styles.box, { backgroundColor: "blue" }]}></View>
+//     </View>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   mainBlock: {
+//     flex: 1,
+//     backgroundColor: "#CCCCCC",
+//     flexDirection: "row",
+//     justifyContent: "space-between",
+//     alignItems: "baseline",
+//   },
+//   box: {
+//     width: 100,
+//     height: 200,
+//   },
+// });
+
+// ЛАБА 6.0___________________________________________________________________________________________________________________________________________
+// import React, {useState} from "react";
+// import { View, StyleSheet, Text } from "react-native";
+
+// import { Collapsible } from "../components/Collapsible";
+
+// export default function Index() {
+//   return (
+//     <View>
+//       <Collapsible title="Секция 1">
+//         <text style={{ color: "blue" }}>Текст секции 1</text>
+//       </Collapsible>
+//       <Collapsible title="Секция 2">
+//         <text style={{ color: "blue" }}>Текст секции 2</text>
+//       </Collapsible>
+//       <Collapsible title="Секция 3">
+//         <text style={{ color: "blue" }}>Текст секции 3</text>
+//       </Collapsible>
+//       <Collapsible title="Секция 4">
+//         <text style={{ color: "blue" }}>Текст секции 4</text>
+//       </Collapsible>
+//       <Collapsible title="Секция 5">
+//         <text style={{ color: "blue" }}>Текст секции 5</text>
+//       </Collapsible>
+//       <Collapsible title="Секция 6">
+//         <text style={{ color: "blue" }}>Текст секции 6</text>
+//       </Collapsible>
+//     </View>
+//   );
+
+// }
+
+// const styles = StyleSheet.create({});
+
+// ЛАБА 6.1___________________________________________________________________________________________________________________________________________
+// import React, { useState } from "react";
+// import { View, FlatList, StyleSheet, Text } from "react-native";
+// import ListItem from "../components/mycomponents/listItem";
+
+// export default function Index() {
+//   const [listOfItems, setListOfItems] = useState([
+//     { text: "Сделать домашку!" },
+//     { text: "Прийти на пару" },
+//     { text: "Сдать всё" },
+//     { text: "Получить зачёт" },
+//   ]);
+//   return (
+//     <View>
+//       <FlatList
+//         data={listOfItems}
+//         renderItem={({ item }) => <ListItem el={item} />}
+//       />
+//     </View>
+//   );
+// }
+
+// const styles = StyleSheet.create({});
+
+// ЛАБА 6.2-3___________________________________________________________________________________________________________________________________________
+// import React, { useState } from "react";
+// import { View, FlatList, StyleSheet, Text, Button } from "react-native";
+// import Form from "../components/mycomponents/form";
+// import ListItem from "../components/mycomponents/listItem";
+
+// export default function Index() {
+//   const deleteHandler = (key: string) => {
+//     setListOfItems((list) => {
+//       return list.filter((listOfItems) => listOfItems.key != key);
+//     });
+//   };
+
+//   const addHandler = (text: string) => {
+//     if (text.trim() !== "") {
+//       setListOfItems((list) => {
+//         return [
+//           { text: text, key: Math.random().toString(36).substring(7) },
+//           ...list,
+//         ];
+//       });
+//     } else {
+//       alert("Задача не может быть пустой.");
+//     }
+//   };
+
+//   const [listOfItems, setListOfItems] = useState([
+//     { text: "Сделать домашку!", key: "1" },
+//     { text: "Прийти на пару", key: "2" },
+//     { text: "Сдать всё", key: "3" },
+//     { text: "Получить зачёт", key: "4" },
+//   ]);
+
+//   return (
+//     <View>
+//       <Form addHandler={addHandler} />
+//       <FlatList
+//         data={listOfItems}
+//         renderItem={({ item }) => (
+//           <ListItem el={item} deleteHandler={deleteHandler} />
+//         )}
+//       />
+//     </View>
+//   );
+// }
